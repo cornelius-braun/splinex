@@ -1,0 +1,39 @@
+[project]
+name = "splinex"
+authors = [
+  { name="Cornelius V. Braun", email="cornelius.v.braun@gmail.com" },
+]
+description = "jax implementation of spline interpolation"
+readme = "README.md"
+requires-python = ">=3.10"
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["splinex*"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "D", "A", "N", "B", "SIM", "C4", "TID"]
+ignore = [
+    "E741", # Ambiguous variable name
+    "D213", # Multi-line docstring summary should start at the second line
+    "D105", # Missing docstring in magic method
+    "D107", # Missing docstring in __init__
+    "D203", # 1 blank line required before class docstring
+    "D401", # First line should be in imperative mood; try rephrasing
+    "D407", # Missing dashed underline after section
+    "D406", # Section name should end with a newline
+    "D106", # Missing docstring in public nested class
+    "B006", # Do not use mutable data structures for argument defaults
+    "B008", # Do not perform function calls in argument defaults
+    "B905", # `zip()` without an explicit `strict=` parameter
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["D"]
